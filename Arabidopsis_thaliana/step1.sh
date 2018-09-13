@@ -30,4 +30,4 @@ ls */quant.sf |while read id;do(abc=$(dirname  $id );abcd=${abc%%"_quant"};sed -
 #生成大的表达矩阵
 paste */quant.sf |awk -F "\t" '{printf $1"\t";for(i=4;i<=NF;i=i+5){printf $i"\t"};print $i}' > all.counts.txt
 #去掉末尾的制表符
-sed -i 's/\t$/$/g' all.counts.txt
+sed -i 's/\t$//g' all.counts.txt
